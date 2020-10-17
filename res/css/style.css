@@ -1,5 +1,6 @@
 * {
     font-family: 'Roboto Slab', serif;
+    outline: none;
 }
 
 html, body {
@@ -82,8 +83,11 @@ nav div {
 
 nav div img {
     height: 100%;
+    width: 30px;
     margin-left: 15px;
     border-radius: 100%;
+    object-fit: cover;
+    object-position: top center;
 }
 
 nav div.search-container > input {
@@ -142,21 +146,26 @@ nav div.avatar-container {
 
 .post .post-author .post-author-info img {
     width: 30px;
+    height: 30px;
     border-radius: 100%;
+    object-fit: cover;
+    object-position: top;
+    margin: 5px;
 }
 
 .post .post-author .post-author-info small {
     position: absolute;
-    top: 5px;
+    top: 10px;
     left: 35px;
 }
 
 .post .post-author .post-author-info + small {
     float: right;
     color: grey;
+    padding: 10px;
 }
 
-.post .post-image img {
+.post .post-image img, video {
     width: 100%;
     min-height: 150px;
     max-height: 350px;
@@ -192,4 +201,53 @@ nav div.avatar-container {
 
 .like-button.liked {
     background-color: #01579b;
+}
+.drop-down-container {
+    position: absolute;
+    min-width: 150px;
+    height: auto;
+    background-color: #ffffff;
+    padding: 10px;
+    right: 0;
+    top: 50px;
+    text-align: left;
+    display: none;
+}
+.drop-down-container span{
+    display: block;
+}
+.drop-down-container span.separator{
+    border-bottom: 1px solid #d7d7d7;
+    margin: 10px -10px;
+}
+
+.profile {
+    width: 45%;
+    display: inline-block;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    text-align: center;
+    margin: 1%;
+}
+.profile img{
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: top;
+    margin: 5px;
+}
+
+.profile h2{
+    font-size: 16px;
+}
+
+.follow-button{
+    background-color: #82008f;
+}
+
+.follow-button.followed{
+    background-color: #ffffff;
+    border: 1px solid #82008f;
+    color: #82008f;
 }
