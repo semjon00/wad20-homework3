@@ -11,7 +11,7 @@
                 <button type="button">Search</button>
             </div>
             <div class="dropdown">
-                <img src="@/assets/avatar.png" class="dropbtn" id="this-user-avatar" alt="Me">
+                <img :src="this.$store.getters.getProfile.avatar" class="dropbtn" id="this-user-avatar" alt="Me">
                 <div class="dropdown-content">
                     <a id="userinfo"> {{this.$store.getters.getProfile.firstname}} {{this.$store.getters.getProfile.lastname}} <br> {{this.$store.getters.getProfile.email}} <br></a>
                     <router-link to="/browse" tag="a">Browse</router-link>
@@ -57,9 +57,12 @@
         height: 100%;
         width: 30px;
         margin-left: 15px;
-        /* border-radius: 100%; */
         object-fit: cover;
         object-position: top center;
+    }
+
+    #this-user-avatar {
+        border-radius: 100%;
     }
 
     #search {
