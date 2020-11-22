@@ -20,7 +20,7 @@ const routes = [
 
 const router = new VueRouter({routes});
 
-let profile = axios.get('https://api.coindesk.com/v1/bpi/currentprice.json');
+let profile = axios.get('https://private-anon-3e8f2d9a55-wad20postit.apiary-mock.com/users/1');
 let posts = axios.get('https://private-anon-cb48b9226c-wad20postit.apiary-mock.com/posts');
 let people = axios.get('https://private-anon-3cd350211a-wad20postit.apiary-mock.com/profiles');
 
