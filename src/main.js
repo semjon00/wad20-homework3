@@ -37,6 +37,7 @@ Promise.all([profile, posts, people]).then(([profile, posts, people]) => {
       },
       toggleSubscribe: (state, id) => {
         state.people[id].subscribed = !state.people[id].subscribed;
+        console.log("Toggle");
       }
     },
     getters: {
