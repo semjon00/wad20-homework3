@@ -20,7 +20,7 @@
         name: "Browse",
         components: {Topbar},
         computed: {
-            people: () => this.$store.state.people
+            people: function() {return this.$store.state.people;}
         }
     }
 </script>
