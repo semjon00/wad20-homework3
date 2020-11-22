@@ -14,8 +14,8 @@
                 <img src="src/assets/avatar.png" class="dropbtn" id="this-user-avatar" alt="Me">
                 <div class="dropdown-content">
                     <a id="userinfo"> Vanakurat Ise <br> vana.kurat@example.com <br></a>
-                    <a href="browse.html">Browse</a> <!-- REPLACE WITH CLICK? -->
-                    <a href="login.html">Log Out</a> <!-- REPLACE WITH CLICK? -->
+                    <a href="browse">Browse</a> <!-- REPLACE WITH CLICK? -->
+                    <a href="login">Log Out</a> <!-- REPLACE WITH CLICK? -->
                 </div>
             </div>
         </nav>
