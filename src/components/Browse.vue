@@ -1,16 +1,20 @@
 <template>
+    <section>
+    <Topbar></Topbar>
     <section class="main-container">
         <div class="profiles" name="profiles">
 
         </div>
     </section>
+    </section>
 </template>
 
 <script>
-    import Person from "../models/Person";
+    import Topbar from "@/components/Topbar";
 
     export default {
-        name: "Browse"
+        name: "Browse",
+        components: {Topbar}
     }
 </script>
 

@@ -1,4 +1,6 @@
 <template>
+    <section>
+        <Topbar></Topbar>
     <section class="main-container">
         <div class="post">
             <div class="post-author">
@@ -53,15 +55,16 @@
                 <button type="button" name="like" class="like-button liked">10k</button>
             </div>
         </div>
-
+    </section>
     </section>
 </template>
 
 <script>
-    import Post from "../models/Post";
+    import Topbar from "@/components/Topbar";
 
     export default {
-        name: "Index"
+        name: "Index",
+        components: {Topbar}
     }
 </script>
 
