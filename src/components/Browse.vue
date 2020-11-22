@@ -2,8 +2,12 @@
     <section>
     <Topbar></Topbar>
     <section class="main-container">
-        <div class="profiles" name="profiles">
-
+        <div class="profiles" name="profiles" v-for="person in people" :key="person.firstname">
+            <div class="personsprofile">
+                <div><img :src="person.avatar" alt="Avatar"></div>
+                <div>{{person.firstname}} {{person.lastname}}</div>
+                <div><button>Follow</button></div>
+            </div>
         </div>
     </section>
     </section>
@@ -14,7 +18,10 @@
 
     export default {
         name: "Browse",
-        components: {Topbar}
+        components: {Topbar},
+        computed: {
+            people: () => this.$store.state.people
+        }
     }
 </script>
 

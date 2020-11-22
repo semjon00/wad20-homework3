@@ -50,5 +50,6 @@ const store = new Vuex.Store({
 new Vue({
   router,
   store,
+  components: {Browse},
   render: h => h(App),
 }).$mount('#app');
