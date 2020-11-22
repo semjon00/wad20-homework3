@@ -6,7 +6,7 @@
             </div>
             <div>
                 <h4>
-                    <a href="#">Create an Account</a>
+                    <a href="#/login">Create an Account</a>
                 </h4>
             </div>
             <div>
@@ -14,7 +14,7 @@
             </div>
             <div>
                 <h3>Please Log In</h3>
-                <form action="index.html" method="post"> <!-- Some change here? -->
+                <form>
                     <div>
                         <input type="text" name="email" placeholder="Email">
                     </div>
@@ -22,11 +22,11 @@
                         <input type="password" name="password" placeholder="Password">
                     </div>
                     <div>
-                        <button class="button" type="submit" name="login">Log In</button>
+                        <router-link to="/" tag="button">Log In</router-link>
                     </div>
                     <div>
                         <small>
-                            <a href="#">Forgot password?</a>
+                            <a href="#/login">Forgot password?</a>
                         </small>
                     </div>
                 </form>
@@ -60,9 +60,15 @@
         background-color: #ffffff;
         box-shadow: 0 0 15px rgba(38, 50, 56, 0.33);
         text-align: center;
+
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
     }
 
-    #login-container form div > input {
+    input {
         padding: 8px 16px;
         margin: 4px 0;
     }
