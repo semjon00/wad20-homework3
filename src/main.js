@@ -2,22 +2,23 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import App from './App.vue'
+const axios = require('axios');
 
 import Browse from "./components/Browse";
 import Index from "./components/Index";
 import Login from "./components/Login";
-import {AxiosInstance as axios} from "axios";
+
+Vue.config.productionTip = false;
+Vue.use(VueRouter);
+Vue.use(Vuex);
 
 const routes = [
   {path: '/', component: Index},
   {path: '/browse', component: Browse},
   {path: '/login', component: Login},
 ];
-const router = new VueRouter({routes});
 
-Vue.config.productionTip = false;
-Vue.use(VueRouter);
-Vue.use(Vuex);
+const router = new VueRouter({routes});
 
 const store = new Vuex.Store({
   state: {
