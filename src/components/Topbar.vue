@@ -2,20 +2,20 @@
     <header>
         <nav> <!-- Now we have vue.js here! Cool -->
             <div class="logo-container">
-                <img src="src/assets/logo.png" alt="postIt">
+                <img src="@/assets/logo.png" alt="PostIt"/>
             </div>
             <div class="search-container">
                 <label>
-                    <input type="text" name="search">
+                    <input type="text" name="search" id="search">
                 </label>
                 <button type="button">Search</button>
             </div>
             <div class="dropdown">
-                <img src="src/assets/avatar.png" class="dropbtn" id="this-user-avatar" alt="Me">
+                <img src="@/assets/avatar.png" class="dropbtn" id="this-user-avatar" alt="Me">
                 <div class="dropdown-content">
-                    <a id="userinfo"> Vanakurat Ise <br> vana.kurat@example.com <br></a>
-                    <a href="browse">Browse</a> <!-- REPLACE WITH CLICK? -->
-                    <a href="login">Log Out</a> <!-- REPLACE WITH CLICK? -->
+                    <a id="userinfo"> {{this.$store.getters.getProfile.firstname}} {{this.$store.getters.getProfile.lastname}} <br> {{this.$store.getters.getProfile.email}} <br></a>
+                    <router-link to="/browse" tag="a">Browse</router-link>
+                    <router-link to="/login" tag="a">Log Out</router-link>
                 </div>
             </div>
         </nav>
@@ -47,7 +47,7 @@
         align-items: center;
     }
 
-    nav div {
+    nav > div {
         height: 30px;
         flex-grow: 4;
         padding: 10px;
@@ -57,12 +57,12 @@
         height: 100%;
         width: 30px;
         margin-left: 15px;
-        border-radius: 100%;
+        /* border-radius: 100%; */
         object-fit: cover;
         object-position: top center;
     }
 
-    nav div.search-container > input {
+    #search {
         box-sizing: border-box;
         height: 30px;
         width: 80%;
@@ -85,12 +85,11 @@
         display: inline-block;
     }
 
-
     .dropdown-content {
         display: none;
         position: absolute;
         min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
         background-color: #f9f9f9;
 
     }
@@ -107,6 +106,6 @@
     }
 
     .dropdown-content a:hover {
-        background-color: #f9f9f9;}
+        background-color: #eaeaea;}
 
 </style>
