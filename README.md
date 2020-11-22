@@ -1,4 +1,4 @@
-# wad20-homework3a
+# wad20-homework3
 
 ## Project setup
 ```
@@ -16,7 +16,7 @@ npm run build
 ```
 
 ### Lints and fixes files
-```
+``
 npm run lint
 ```
 
