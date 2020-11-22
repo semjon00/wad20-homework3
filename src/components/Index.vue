@@ -5,7 +5,7 @@
             <div class="post" v-for="post of posts" :key="post.id">
                 <div class="post-author">
                     <span class="post-author-info">
-                        <img src="@/assets/avatar.png" alt="Post author">
+                        <img :src="post.author.avatar" alt="Post author">
                         <small>{{post.author.firstname}} {{post.author.lastname}}</small>
                     </span>
                     <small>{{post.createTime}}</small>
@@ -131,5 +131,9 @@
 
     .like-button.liked {
         background-color: #01579b;
+    }
+
+    .post-author-info small {
+        margin-left: 10px;
     }
 </style>
