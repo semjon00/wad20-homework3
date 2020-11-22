@@ -58,6 +58,8 @@
 </template>
 
 <script>
+    import Post from "../models/Post";
+
     export default {
         name: "Index"
     }

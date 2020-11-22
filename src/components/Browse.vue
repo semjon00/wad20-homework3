@@ -7,6 +7,8 @@
 </template>
 
 <script>
+    import Person from "../models/Person";
+
     export default {
         name: "Browse"
     }
