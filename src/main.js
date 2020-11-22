@@ -12,8 +12,6 @@ const routes = [
   {path: '/', component: Index},
   {path: '/browse', component: Browse},
   {path: '/login', component: Login},
-  {path: '/people/:id', name: "people", component: Person},
-  {path: '/posts/:id', name: "posts", component: Post},
 ];
 const router = new VueRouter({routes});
 
