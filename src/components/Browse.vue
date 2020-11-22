@@ -2,7 +2,7 @@
     <section>
     <Topbar></Topbar>
     <section class="main-container">
-        <div class="profiles" name="profiles" v-for="person in people" :key="person.firstname">
+        <div class="profiles" name="profiles" v-for="person of people" :key="person.firstname">
             <div class="personsprofile">
                 <div><img :src="person.avatar" alt="Avatar"></div>
                 <div>{{person.firstname}} {{person.lastname}}</div>
@@ -20,7 +20,9 @@
         name: "Browse",
         components: {Topbar},
         computed: {
-            people: function() {return this.$store.state.people;}
+            people: function() {
+                return this.$store.state.people;
+            }
         }
     }
 </script>

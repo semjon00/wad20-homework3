@@ -20,36 +20,45 @@ const routes = [
 
 const router = new VueRouter({routes});
 
-const store = new Vuex.Store({
-  state: {
-    profile: axios.get('https://api.coindesk.com/v1/bpi/currentprice.json'),
-    posts: axios.get('https://private-anon-cb48b9226c-wad20postit.apiary-mock.com/posts'),
-    people: axios.get('https://private-anon-3cd350211a-wad20postit.apiary-mock.com/profiles'),
-  },
-  mutations: {
-    toggleLike: (state, id) => {
-      state.posts[id].liked = !state.posts[id].liked;
+let profile = axios.get('https://api.coindesk.com/v1/bpi/currentprice.json');
+let posts = axios.get('https://private-anon-cb48b9226c-wad20postit.apiary-mock.com/posts');
+let people = axios.get('https://private-anon-3cd350211a-wad20postit.apiary-mock.com/profiles');
+
+Promise.all([profile, posts, people]).then(([profile, posts, people]) => {
+  const store = new Vuex.Store({
+    state: {
+      profile,
+      posts,
+      people,
     },
-    toggleSubscribe: (state, id) => {
-      state.people[id].subscribed = !state.people[id].subscribed;
+    mutations: {
+      toggleLike: (state, id) => {
+        state.posts[id].liked = !state.posts[id].liked;
+      },
+      toggleSubscribe: (state, id) => {
+        state.people[id].subscribed = !state.people[id].subscribed;
+      }
+    },
+    getters: {
+      getPost: (state) => (id) => {
+        return state.posts[id];
+      },
+      getPerson: (state) => (id) => {
+        return state.people[id];
+      },
+      getProfile: (state) => {
+        return state.profile;
+      }
     }
-  },
-  getters: {
-    getPost: (state) => (id) => {
-      return state.posts[id];
-    },
-    getPerson: (state) => (id) => {
-      return state.people[id];
-    },
-    getProfile: (state) => {
-      return state.profile;
-    }
-  }
+  });
+  
+  
+  new Vue({
+    router,
+    store,
+    components: {Browse},
+    render: h => h(App),
+  }).$mount('#app');
+  
 });
 
-new Vue({
-  router,
-  store,
-  components: {Browse},
-  render: h => h(App),
-}).$mount('#app');
