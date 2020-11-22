@@ -3,7 +3,7 @@
     <Topbar></Topbar>
     <section class="main-container">
         <div class="profiles" name="profiles">
-            <div class="personsprofile" v-for="person of people" :key="person.firstname">
+            <div class="personsprofile" v-for="person of people" :key="person.firstname + person.lastname">
                 <div><img :src="person.avatar" alt="Avatar"></div>
                 <div>{{person.firstname}} {{person.lastname}}</div>
                 <div><button>Follow</button></div>
