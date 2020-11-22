@@ -27,9 +27,9 @@ let people = axios.get('https://private-anon-3cd350211a-wad20postit.apiary-mock.
 Promise.all([profile, posts, people]).then(([profile, posts, people]) => {
   const store = new Vuex.Store({
     state: {
-      profile,
-      posts,
-      people,
+      profile:profile.data,
+      posts:posts.data,
+      people:people.data,
     },
     mutations: {
       toggleLike: (state, id) => {

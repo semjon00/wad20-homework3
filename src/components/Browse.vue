@@ -2,8 +2,8 @@
     <section>
     <Topbar></Topbar>
     <section class="main-container">
-        <div class="profiles" name="profiles" v-for="person of people" :key="person.firstname">
-            <div class="personsprofile">
+        <div class="profiles" name="profiles">
+            <div class="personsprofile" v-for="person of people" :key="person.firstname">
                 <div><img :src="person.avatar" alt="Avatar"></div>
                 <div>{{person.firstname}} {{person.lastname}}</div>
                 <div><button>Follow</button></div>
@@ -21,6 +21,7 @@
         components: {Topbar},
         computed: {
             people: function() {
+                console.log(this.$store.state.people)
                 return this.$store.state.people;
             }
         }
