@@ -6,8 +6,6 @@ import App from './App.vue'
 import Browse from "./components/Browse";
 import Index from "./components/Index";
 import Login from "./components/Login";
-import Person from "./components/Person";
-import Post from "./components/Post";
 
 const routes = [
   {path: '/', component: Index},
