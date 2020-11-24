@@ -21,18 +21,11 @@
         components: {Topbar},
         computed: {
             people: function() {
-                console.log(this.$store.state.people)
                 return this.$store.state.people;
             }
         },
-        watch: {
-        '$store.state.people': function() {
-            this.people = this.$store.state.people;
-        }
-        },
         methods: {
             toggleFollow : function(id) {
-                console.log(id);
                 this.$store.commit("toggleSubscribe", id)
             }
         }

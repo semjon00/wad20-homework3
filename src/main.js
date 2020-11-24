@@ -25,6 +25,13 @@ let posts = axios.get('https://private-anon-cb48b9226c-wad20postit.apiary-mock.c
 let people = axios.get('https://private-anon-3cd350211a-wad20postit.apiary-mock.com/profiles');
 
 Promise.all([profile, posts, people]).then(([profile, posts, people]) => {
+  console.log("INITIAL STATE") 
+  console.log("WARNING, STATE IS QUERYED WHEN PROPERTIES ARE EXPANDEND")
+  console.log( {
+    profile:profile.data,
+    posts:posts.data,
+    people:people.data,
+  });
   const store = new Vuex.Store({
     state: {
       profile:profile.data,
