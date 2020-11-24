@@ -2,7 +2,7 @@
     <section>
         <Topbar></Topbar>
         <section class="main-container">
-            <div class="post" v-for="post of posts" :key="post.id">
+            <div class="post" v-for="(post, index) of posts" :key="post.id">
                 <div class="post-author">
                     <span class="post-author-info">
                         <img :src="post.author.avatar" alt="Post author">
@@ -28,7 +28,12 @@
                     <h3>{{post.text}}</h3>
                 </div>
                 <div class="post-actions">
-                    <button type="button" name="like" class="like-button">{{post.likes}}</button>
+                    <button type="button" name="like" class="like-button" 
+                        v-bind:class="{liked: post.liked}"
+                        @click="toggleLike(index)"
+                        >
+                        {{post.likes}}
+                    </button>
                 </div>
             </div>
         </section>
@@ -45,6 +50,11 @@
             posts: function () {
                 console.log(this.$store.state.posts)
                 return this.$store.state.posts;
+            }
+        },
+        methods: {
+            toggleLike: function(index) {
+                this.$store.commit('toggleLike', index);
             }
         }
     }
