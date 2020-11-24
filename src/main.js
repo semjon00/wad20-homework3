@@ -33,11 +33,12 @@ Promise.all([profile, posts, people]).then(([profile, posts, people]) => {
     },
     mutations: {
       toggleLike: (state, id) => {
-        state.posts[id].liked = !state.posts[id].liked;
+        // MEANS: state.posts[id].liked = !state.posts[id].liked;
+        Vue.set(state.posts[id], 'liked', !state.posts[id].liked);
       },
       toggleSubscribe: (state, id) => {
-        state.people[id].subscribed = !state.people[id].subscribed;
-        console.log("Toggle");
+        // MEANS: state.people[id].subscribed = !state.people[id].subscribed;
+        Vue.set(state.people[id], 'subscribed', !state.people[id].subscribed);
       }
     },
     getters: {

@@ -6,7 +6,7 @@
             <div class="personsprofile" v-for="(person, id) in people" :key="id">
                 <div><img :src="person.avatar" alt="Avatar"></div>
                 <div>{{person.firstname}} {{person.lastname}}</div>
-                <div><button v-on:click="toggleFollow(id)" v-bind:class="{following: person.subscribed }">Follow</button></div>
+                <div><button @click="toggleFollow(id)" v-bind:class="{following: person.subscribed }">Follow</button></div>
             </div>
         </div>
     </section>
@@ -70,7 +70,7 @@
         border-color: darkmagenta;
     }
 
-    .personsprofileg button.following{
+    .personsprofile button.following{
         background-color: white;
         color: darkmagenta;
     }
